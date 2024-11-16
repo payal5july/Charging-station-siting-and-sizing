@@ -17,3 +17,20 @@ EVs are served on a first-come-first-serve (FCFS) basis and can stay in a PCS fo
 
 The objective is to minimize total unsatisfied EV demands (`𝓛ₜₒₜⁱ`) across all PCSs over a time horizon `𝐻`. The queueing mechanism and time-dependent arrivals are used to derive unsatisfied demands dynamically while accounting for charger allocation and PCS-specific capacities.
 
+This work addresses the challenge of allocating charging ports to potential charging stations (PCSs) under capacity constraints and uncertain, time-dependent EV demands. Key contributions include:
+
+1. **EV Queueing Model**: A time-dependent queueing model for PCSs that accounts for dynamic EV inflow, where waiting times depend on demand accumulation across time slots. Unsatisfied EVs are those uncharged within a specified waiting window, $\tau$.
+2. **Statistical Approximation**: A novel approximation method estimates total unsatisfied demands using time-dependent EV inflow distributions and is validated against Monte Carlo (MC) simulations.
+3. **Port Allocation Algorithm**: A heuristic algorithm minimizes total unsatisfied demands through iterative optimization, achieving near-optimal charging port distribution across PCSs.
+4. **Comparison with MC Simulations**: Proposed methods are benchmarked against MC simulations for accuracy and computation time, showing comparable solutions with significantly reduced computational effort.
+
+The paper describes a heuristic approach for allocating charging ports across potential charging stations (PCSs) in a network, based on EV demand distribution. Here's a concise summary:
+
+1. **Objective**: Determine the optimal distribution of charging ports to minimize unsatisfied EV demand.
+2. **Initial Allocation**: Ports are initially allocated using policies based on factors like average or maximum demand.
+3. **Statistical Approximation**: Unsatisfied demand is estimated for a given allocation using a statistical method.
+4. **Iterative Optimization**: If unsatisfied demand can be reduced, chargers are reshuffled intelligently among PCSs. The process repeats until no further reduction is possible.
+5. **Output**: The final allocation identifies PCSs with non-zero assigned ports, which are selected for charging station construction. 
+
+The methodology balances demand satisfaction with efficient resource allocation.
+
